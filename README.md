@@ -176,7 +176,7 @@ Grab the UUID for that drive (usually the first UUID listed) and add it to /boot
 
     		title   Arch Linux
     		linux   /vmlinuz-linux
-   		initrd  /intel-ucode.img
+		initrd  /intel-ucode.img
     		initrd  /initramfs-linux.img
     		options cryptdevice=UUID=(your UUID we copied from the command above):lvm root=/dev/mapper/main-root quiet rw
  
