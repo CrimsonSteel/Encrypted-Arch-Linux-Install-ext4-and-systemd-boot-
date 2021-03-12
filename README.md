@@ -1,5 +1,3 @@
-Ext4, dm-crypt and systemd-boot
-
 This is only a guide to assist you. Install at your own risk and see https://wiki.archlinux.org/ if you get lost. I am not responsible for your machine or installation.
 
 Let's proceed!
