@@ -122,7 +122,7 @@ New system edits
 		pacman -Sy
  
 		nano /etc/mkinitcpio.conf
-(edit)
+(edit as below adding "encrypt" and "lvm2")
 
 		HOOKS=(base udev autodetect modconf block encrypt lvm2 filesystems fsck)
 		mkinitcpio -p linux
