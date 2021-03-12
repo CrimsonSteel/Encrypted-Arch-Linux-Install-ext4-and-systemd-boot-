@@ -42,7 +42,7 @@ List drives (to see name of drive(s) to use for installation)
 Partition your drive
 
 		fdisk /dev/nvme0n1
-(use your drive...nvme is only shown as an example!)
+(USE YOUR DRIVE...an nvme drive will be shown throughout this guide as an example only!)
 
 		g
 		n (last sector) +256M
@@ -163,9 +163,13 @@ Install systemd-bootloader
 		console-mode max
 		editor no
  
-Grab the UUID for your drive and add it to /boot/loader/entries/arch.conf with the following command
+Find the drive where root is installed
 
-		blkid |grep (name of drive) |cut -d'"' -f 2 >> /boot/loader/entries/arch.conf
+		blkid
+		
+Grab the UUID for that drive (usually the first UUID listed) and add it to /boot/loader/entries/arch.conf with the following command
+
+		blkid |grep nvme0n1p2 |cut -d'"' -f 2 >> /boot/loader/entries/arch.conf
  
 		nano /boot/loader/entries/arch.conf
 (edit as below)
