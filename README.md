@@ -196,7 +196,7 @@ Enable systemd autostarts
  
 Add user
 
-		useradd -mG wheel #your username
+		useradd -mG wheel (your username)
 		passwd (your username)
  
 		nano /etc/sudoers
