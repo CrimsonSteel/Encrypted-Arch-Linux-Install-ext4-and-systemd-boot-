@@ -34,10 +34,9 @@ Set time
 
 		timedatectl set-ntp true
  
-List drives
+List drives (to see name of drive(s) to use for installation)
 
 		lsblk 
-(to see name of drives)
  
 Partition your drive
 
