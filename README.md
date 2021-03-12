@@ -28,6 +28,7 @@ For wireless internet otherwise skip
 Get the fastest mirrors for your area
 
 		reflector --country "United States" --age 12 --sort rate --save /etc/pacman.d/mirrorlist
+		
 		pacman -Syu
  
 Set time
@@ -86,6 +87,7 @@ Install base system
 Install syslinux and append
 		
 		syslinux-install_update -i -a -m -c /mnt
+		
 		nano /mnt/boot/syslinux/syslinux.cfg
 (edit both arch and fallback)
 
@@ -96,6 +98,7 @@ Install syslinux and append
 Generate fstab
 
 		genfstab -U -p /mnt >> /mnt/etc/fstab
+		
 		nano /mnt/etc/fstab
 (when using an ssd or nvme change "relatime" to "noatime)
  
@@ -106,6 +109,7 @@ Log into new system
 Create language and location defaults
 
 		echo LANG=en_US.UTF-8 > /etc/locale.conf
+		
 		nano /etc/locale.gen
 (uncomment en_US.UTF-8, or whatever your language is, and save)
 
@@ -125,6 +129,9 @@ New system edits
 (edit as below adding "encrypt" and "lvm2")
 
 		HOOKS=(base udev autodetect modconf block encrypt lvm2 filesystems fsck)
+
+Generate mkinit		
+		
 		mkinitcpio -p linux
 
 Set root password
@@ -142,10 +149,12 @@ Create computer hostname
 (verify hostname is set correctly)
 
 		ping -c 3 (your hostname)
+(if it pings, your good to go)
  
 Install systemd-bootloader
 		
 		bootctl --path=/boot install
+		
 		nano /boot/loader/loader.conf
 (edit as below)
 
@@ -202,6 +211,7 @@ on wireless connection type "nmtui" and connect to your wireless network
 		sudo timedatectl set-ntp true
  
 		sudo reflector --country "United States" --age 12 --sort rate --save /etc/pacman.d/mirrorlist
+		
 		sudo pacman -Syu
  
 Install paru for easy AUR access
