@@ -174,11 +174,11 @@ Grab the UUID for that drive (usually the first UUID listed) and add it to /boot
 		nano /boot/loader/entries/arch.conf
 (edit as below)
 
-    title   Arch Linux
-    linux   /vmlinuz-linux
-    initrd  /intel-ucode.img
-    initrd  /initramfs-linux.img
-    options cryptdevice=UUID=(your UUID we copied from the command above):lvm root=/dev/mapper/main-root quiet rw
+    		title   Arch Linux
+    		linux   /vmlinuz-linux
+   		initrd  /intel-ucode.img
+    		initrd  /initramfs-linux.img
+    		options cryptdevice=UUID=(your UUID we copied from the command above):lvm root=/dev/mapper/main-root quiet rw
  
 Install some more packages based on need
 
